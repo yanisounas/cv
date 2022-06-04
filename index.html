@@ -13,32 +13,44 @@
         <!-- BALISES STYLE -->
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- FIN BALISES STYLE -->
 
         <!-- BALISES SCRIPT -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/js/app.js"></script>
         <!-- FIN BALISES SCRIPT -->
     </head>
     <body>
         <div class="container">
+            <!-- THEME BUTTON -->
+            <div class="theme-button">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="theme-settings">
+                <div class="theme default"></div>
+                <div class="theme dark-blue"></div>
+            </div>
+            <!-- END THEME BUTTON -->
+
             <!-- ASIDE PRESENTATION -->
             <aside class="presentation">
-                <div class="aside-header">
+                <div class="aside-header anim-hidden">
                     <img src="https://fakeimg.pl/100x100/282828/eae0d0/?retina=1" alt="Nom Prénom">
                     <div class="h-infos">
                         <h2>Nom Prénom</h2>
                     </div>
                 </div>
-                <div class="aside-content">
+                <div class="aside-content anim-hidden">
                     <div class="aside-section">
                         <h3>Titre Section</h3>
                         <p>Contenu Section</p>
                     </div>
-                    <div class="aside-section">
+                    <div class="aside-section anim-hidden">
                         <h3>Titre Section</h3>
                         <p>Contenu Section</p>
                     </div>
-                    <div class="aside-section">
+                    <div class="aside-section anim-hidden">
                         <h3>Titre Section</h3>
                         <p>Contenu Section</p>
                     </div>
@@ -49,7 +61,7 @@
             <!-- CONTENU PRINCIPAL -->
             <div class="content">
                 <!-- SECTION DEGREE (Parcours) -->
-                <section id="degree">
+                <section class="anim-hidden" id="degree">
                     <h1 class="section-title">Parcours</h1>
                     <div class="section-body">
                         <div class="p-body">
@@ -79,13 +91,33 @@
                 <!-- FIN SECTION DEGREE (Parcours) -->
 
                 <!-- SECTION SKILLS (Compétences) -->
-                <section id="skills">
+                <section class="anim-hidden" id="skills">
                     <h1 class="section-title">Compétences</h1>
                     <div class="section-body">
                         <div class="s-body">
                             <div class="s-content">
-
+                                <div class="icons">
+                                    <i class="fa-brands fa-html5 fa-3x"></i>
+                                    <i class="fa-brands fa-css3 fa-3x"></i>
+                                    <i class="fa-brands fa-js-square fa-3x"></i>
+                                </div>
+                                <div class="score"><span class="value"></span></div>
                             </div>
+                            <div class="s-content">
+                                <div class="icons">
+                                    <i class="fa-brands fa-html5 fa-3x"></i>
+                                    <i class="fa-brands fa-css3 fa-3x"></i>
+                                    <i class="fa-brands fa-js-square fa-3x"></i>
+                                </div>
+                                <div class="score"><span class="value"></span></div>
+                        </div>
+                        <div class="s-content">
+                            <div class="icons">
+                                <i class="fa-brands fa-html5 fa-3x"></i>
+                                <i class="fa-brands fa-css3 fa-3x"></i>
+                                <i class="fa-brands fa-js-square fa-3x"></i>
+                            </div>
+                            <div class="score"><span class="value"></span></div>
                         </div>
                     </div>
                 </section>
