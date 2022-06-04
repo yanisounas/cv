@@ -108,16 +108,5 @@ $(document).ready(function()
     {
         $(this).find("img").css("transform", "scale(1)");
     });
-
-    $(".w-link").hover(function ()
-    {
-        $(this).css("transform", "scale(1.1)");
-        $(this).toggleClass("link-hover");
-    }, function ()
-    {
-        $(this).css("transform", "scale(1)");
-        $(this).toggleClass("link-hover");
-
-    });
 });
 

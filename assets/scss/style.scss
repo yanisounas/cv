@@ -78,12 +78,13 @@
 .presentation
 {
   position: fixed;
+  color: var(--text-theme-color);
   width: 20%;
   height: 100%;
   top: 0;
   left: 0;
 
-  /*&::after
+  &::after
   {
     position: absolute;
     content: '';
@@ -93,8 +94,8 @@
     left: 0;
     right: 0;
     z-index: -1;
-    opacity: .6;
-  }*/
+    opacity: .3;
+  }
 
   .overlay
   {
@@ -337,7 +338,7 @@
             position: relative;
             transition: 1s;
 
-            &::after
+            &::after, &::before
             {
               content:'';
               position: absolute;
@@ -347,20 +348,28 @@
               left:0;
               transition: 1s cubic-bezier(1,0,.15,.98);
             }
-          }
-
-          .link-hover
-          {
-            transition: 1s cubic-bezier(1,0,.15,.98);
-
-            &:hover
+            &::before
             {
-              &::after
-              {
+              transform: scaleX(0);
+              transform-origin: left;
+            }
 
-                right: 0;
-                left: inherit;
+            &::after {
+              transform-origin: right;
+              transition-delay: 0.25s;
+            }
+
+            &:hover {
+              &::before {
+                transform: scaleX(1);
                 width: 100%;
+                transition-delay: 0.25s;
+              }
+
+              &::after {
+                width: 100%;
+                transform: scaleX(0);
+                transition-delay: 0s;
               }
             }
           }
