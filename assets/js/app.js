@@ -6,19 +6,31 @@ $(document).ready(function()
             "text-color": "black",
             "text-theme-color": "white",
             "theme-color": "#3D0202",
-            "theme-color-opacity": "rgba(61, 2, 2, 0.74)"
+            "theme-color-opacity": "rgba(61, 2, 2, 0.8)"
         },
         "dark-blue": {
             "text-color": "black",
             "text-theme-color": "white",
             "theme-color": "#02133d",
-            "theme-color-opacity": "rgba(2,7,61,0.74)"
+            "theme-color-opacity": "rgba(2,7,61,0.8)"
+        },
+        "brown": {
+            "text-color": "black",
+            "text-theme-color": "white",
+            "theme-color": "#3d2302",
+            "theme-color-opacity": "rgba(61,29,2,0.8)"
+        },
+        "orange": {
+            "text-color": "black",
+            "text-theme-color": "white",
+            "theme-color": "#b96900",
+            "theme-color-opacity": "rgba(185,105,0,0.8)"
         }
     };
     let theme_settings = $(".theme-settings");
     Object.keys(themes_color).forEach(function(key)
     {
-        theme_settings.html(`${theme_settings.html()} <div class="theme ${key}"></div>`);
+        theme_settings.html(`${theme_settings.html()} <div class="theme ${key}" style="background-color:${themes_color[key]["theme-color"]}"></div>`);
     });
 
     const ratio = .1;

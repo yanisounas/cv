@@ -5,7 +5,7 @@
   --text-color: black;
   --text-theme-color: white;
   --theme-color: #3D0202;
-  --theme-color-opacity: rgba(61, 2, 2, 0.74);
+  --theme-color-opacity: rgba(61, 2, 2, 0.8);
   font-size: 16px;
   font-family: "Titillium Web", sans-serif;
   color: var(--text-color);
@@ -56,16 +56,6 @@
     height: 30px;
     z-index: 20;
   }
-
-  .dark-blue
-  {
-    background-color: #020a3d;
-  }
-
-  .default
-  {
-    background-color: #3D0202;
-  }
 }
 .show
 {
@@ -91,14 +81,33 @@
 .presentation
 {
   position: fixed;
-  background-color: var(--theme-color-opacity);
   width: 20%;
   height: 100%;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  /*&::after
+  {
+    position: absolute;
+    content: '';
+    background: url(../img/aside_bg.jpg) no-repeat top center/cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: .6;
+  }*/
+
+  .overlay
+  {
+    background-color: var(--theme-color-opacity);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .aside-header
   {
@@ -107,6 +116,7 @@
     flex-direction: column;
     align-items: center;
     margin: 3rem 0;
+
 
     img
     {
@@ -260,8 +270,7 @@
             background-color: white;
             z-index: 3;
             position: relative;
-            transition: width 1s cubic-bezier(.91,.01,.29,1);
-
+            transition: width 1.3s cubic-bezier(1,0,.15,.98);
 
             &::before
             {
