@@ -59,22 +59,25 @@
   margin: 1.5rem 25%;
   width: 75%;
   height: 100vh;
-  /* PARTIE PARCOURS DANS LE CONTENU PRINCIPAL */
-  /* FIN PARTIE PARCOURS DANS LE CONTENU PRINCIPAL */
+  /* PARTIE SECTION */
+  /* FIN PARTIE SECTION */
+  /* PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
+  /* FIN PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
   /* PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
   /* FIN PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
 }
 
-.content #degree {
+.content section {
   width: 100%;
+  margin-bottom: 8rem;
 }
 
-.content #degree .section-title {
+.content section .section-title {
   font-size: 2.5rem;
   font-weight: 600;
 }
 
-.content #degree .section-body {
+.content section .section-body {
   margin: 2rem 0;
   width: 100%;
 }
@@ -101,6 +104,10 @@
 
 /* FIN PARTIE CONTENU PRINCIPAL */
 /*
+  * TODO: Thème
+  * TODO: Rajouter des classes "génériques" pour les textes et éléments qui changeront en fonction du thème
+  *
+  *
   * TODO: responsive:
   * TODO: - aside: Passer en Burger menu
   * TODO: - Parcours: Changer le text des listes : Enlever l'établissement pour réduire la taille (Si ça devient gênant, sinon le laisser)

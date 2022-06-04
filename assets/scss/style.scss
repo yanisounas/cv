@@ -70,22 +70,31 @@
   width: 75%;
   height: 100vh;
 
-
-  /* PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
-  #degree
+  /* PARTIE SECTION */
+  section
   {
     width: 100%;
+    margin-bottom: 8rem;
+
     .section-title
     {
       font-size: 2.5rem;
       font-weight: 600;
     }
-
     .section-body
     {
       margin: 2rem 0;
       width: 100%;
+    }
+  }
+  /* FIN PARTIE SECTION */
 
+
+  /* PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
+  #degree
+  {
+    .section-body
+    {
       .p-body
       {
         display: flex;
@@ -114,7 +123,8 @@
 
 
   /* PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
-
+  #skills
+  {}
 
   /* FIN PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
 
@@ -125,6 +135,10 @@
 
 
 /*
+  * TODO: Thème
+  * TODO: Rajouter des classes "génériques" pour les textes et éléments qui changeront en fonction du thème
+  *
+  *
   * TODO: responsive:
   * TODO: - aside: Passer en Burger menu
   * TODO: - Parcours: Changer le text des listes : Enlever l'établissement pour réduire la taille (Si ça devient gênant, sinon le laisser)
