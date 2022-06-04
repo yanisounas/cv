@@ -15,6 +15,12 @@ $(document).ready(function()
             "theme-color-opacity": "rgba(2,7,61,0.74)"
         }
     };
+    let theme_settings = $(".theme-settings");
+    Object.keys(themes_color).forEach(function(key)
+    {
+        theme_settings.html(`${theme_settings.html()} <div class="theme ${key}"></div>`);
+    });
+
     const ratio = .1;
     const options = {
         root: null,
@@ -57,7 +63,7 @@ $(document).ready(function()
 
     $(".theme-button").click(function ()
     {
-        $(".theme-settings").toggleClass("show");
+        theme_settings.toggleClass("show");
     });
 
     $(".theme").each(function()
@@ -72,7 +78,7 @@ $(document).ready(function()
                 {
                     document.documentElement.style.setProperty(`--${key}`, t_values[key]);
                 });
-                $(".theme-settings").toggleClass("show");
+                theme_settings.toggleClass("show");
             }
         });
     });
