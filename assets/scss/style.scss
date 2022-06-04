@@ -63,7 +63,7 @@
 .anim-hidden
 {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(50px);
 }
 
 .anim-show
@@ -221,11 +221,14 @@
         .icons
         {
           margin: 1rem 2rem;
+          display: flex;
 
-          i
+          .s-icon
           {
             margin: 0 1rem;
             color: var(--theme-color);
+            cursor: pointer;
+            transition: 1s;
           }
         }
 

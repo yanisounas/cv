@@ -27,7 +27,9 @@ $(document).ready(function()
             "theme-color-opacity": "rgba(185,105,0,0.8)"
         }
     };
-    let theme_settings = $(".theme-settings");
+
+
+    const theme_settings = $(".theme-settings");
     Object.keys(themes_color).forEach(function(key)
     {
         theme_settings.html(`${theme_settings.html()} <div class="theme ${key}" style="background-color:${themes_color[key]["theme-color"]}"></div>`);
@@ -41,6 +43,59 @@ $(document).ready(function()
         });
     }
     set_theme(themes_color["default"])
+
+    const skills = {
+        frontend: {
+            html5: 90,
+            css3: 70,
+            javascript: 40
+        },
+        backend: {
+            php: 70,
+            symfony: 30,
+            django: 20
+        },
+        software: {
+            git: 50,
+            github: 60,
+            figma: 30
+        },
+        os: {
+            linux: 70,
+            windows: 80,
+            macos: 70
+        }
+    };
+
+    const init_s_value = function(el, value, parent = null) {
+        if (parent)
+        {
+            let i = 0;
+            do {
+                el = el.parent();
+                i++;
+            }while(i < parent);
+
+            el = el.find(".value");
+        }
+        el.css("width", value);
+    };
+
+
+    const reset_s = function(name, el = null, parent = null)
+    {
+        let add = 0;
+        let count = 0;
+        Object.keys(skills[name]).forEach(function(key)
+        {
+            add += skills[name][key];
+            count++;
+        });
+        add /= count;
+
+        init_s_value((el) ? el : $(`.${name}`), `${add}%`, parent);
+
+    }
 
 
     const ratio = .1;
@@ -58,7 +113,10 @@ $(document).ready(function()
             {
                 if (entry.target.classList.contains('score'))
                 {
-                    $(entry.target).find('.value').css('width', "80%");
+                    reset_s("frontend", null, 1);
+                    reset_s("backend", null, 1);
+                    reset_s("software", null, 1);
+                    reset_s("os", null, 1);
                 }
 
 
@@ -108,5 +166,29 @@ $(document).ready(function()
     {
         $(this).find("img").css("transform", "scale(1)");
     });
+
+    let type_writer = function(el, text, delay, text_position = 0)
+    {
+        el.text(text.substring(0 , text_position));
+        if (text_position++ != text.length)
+        {
+            setInterval(type_writer(el, text, delay, text_position), delay);
+        }
+    };
+
+
+    $(".s-icon").hover(function ()
+    {
+        let value = `${skills[$(this).parent().attr("class").split(' ')[1]][$(this).attr('id')]}%`;
+        type_writer($(this), ` ${value}`, 1000);
+        init_s_value($(this), value , 2);
+        //$(this).parent().parent().find(".value").css("width", "30%");
+    }, function()
+    {
+        reset_s($(this).parent().attr("class").split(' ')[1], $(this), 2);
+        $(this).text("")
+
+    });
+
 });
 
