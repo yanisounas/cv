@@ -154,7 +154,10 @@ $(document).ready(function()
                 if (!entry.target.classList.contains('score'))
                 {
                     entry.target.classList.add("anim-show");
-                    observer.unobserve(entry.target);
+                    if (!($(window).width() < 1041 && (entry.target.classList.contains('aside-header') || entry.target.classList.contains('aside-content'))))
+                    {
+                        observer.unobserve(entry.target);
+                    }
                 }
             }
         });
@@ -243,9 +246,21 @@ $(document).ready(function()
 
     $(".burger-menu").click(function() {
         $(this).toggleClass("b-active");
+        
         $(".presentation").toggleClass("pres-show");
-        $(".aside-header").toggleClass("aside-h-show");
-        $(".aside-content").toggleClass("aside-c-show");
+
+        let a_header = $(".aside-header");
+        let a_content = $(".aside-content");
+        a_header.toggleClass("aside-h-show");
+        if (document.querySelector(".aside-header").classList.contains("anim-show"))
+        {
+            a_header.toggleClass("anim-show")
+        }
+        a_content.toggleClass("aside-c-show");
+        if (document.querySelector(".aside-content").classList.contains("anim-show"))
+        {
+            a_content.toggleClass("anim-show")
+        }
     });
 
 });
