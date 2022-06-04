@@ -2,10 +2,6 @@
 
 :root
 {
-  --text-color: black;
-  --text-theme-color: white;
-  --theme-color: #3D0202;
-  --theme-color-opacity: rgba(61, 2, 2, 0.8);
   font-size: 16px;
   font-family: "Titillium Web", sans-serif;
   color: var(--text-color);
@@ -159,7 +155,7 @@
   section
   {
     width: 100%;
-    margin-bottom: 8rem;
+    margin-bottom: 15rem;
 
     .section-title
     {
@@ -175,7 +171,7 @@
   /* FIN PARTIE SECTION */
 
 
-  /* PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
+  /* PARTIE DEGREE */
   #degree
   {
     .section-body
@@ -204,10 +200,10 @@
       }
     }
   }
-  /* FIN PARTIE DEGREE DANS LE CONTENU PRINCIPAL */
+  /* FIN PARTIE DEGREE */
 
 
-  /* PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
+  /* PARTIE COMPETENCES */
   #skills
   {
     .s-body
@@ -297,8 +293,71 @@
       }
     }
   }
-  /* FIN PARTIE COMPETENCES DANS LE CONTENU PRINCIPAL */
+  /* FIN PARTIE COMPETENCES */
 
+  /* PARTIE PORTFOLIO */
+  #portfolio
+  {
+    .w-body
+    {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .w-content
+      {
+        max-width: 40%;
+        height: 90%;
+        margin: 2rem 3rem;
+        position: relative;
+        overflow: hidden;
+        transition: 1s;
+
+
+        &:hover
+        {
+          transform: scale(1.1);
+        }
+
+        img
+        {
+          width: 100%;
+          border-radius: 40px;
+          height: 70%;
+        }
+
+        .w-caption
+        {
+          background-color: var(--theme-color);
+          color: var(--text-theme-color);
+          height: 80%;
+          width: 125%;
+          position: absolute;
+          bottom: -60%;
+          transition: bottom 1s cubic-bezier(1,.07,.76,.61);
+
+
+          .w-desc
+          {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 80%;
+            text-align: center;
+
+            .w-title
+            {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* FIN PARTIE PORTFOLIO */
 
 }
 /* FIN PARTIE CONTENU PRINCIPAL */

@@ -33,6 +33,16 @@ $(document).ready(function()
         theme_settings.html(`${theme_settings.html()} <div class="theme ${key}" style="background-color:${themes_color[key]["theme-color"]}"></div>`);
     });
 
+    const set_theme = function(theme)
+    {
+        Object.keys(theme).forEach(function(key)
+        {
+            document.documentElement.style.setProperty(`--${key}`, theme[key]);
+        });
+    }
+    set_theme(themes_color["default"])
+
+
     const ratio = .1;
     const options = {
         root: null,
@@ -85,14 +95,19 @@ $(document).ready(function()
             if (document.querySelector(".theme-settings").classList.contains("show"))
             {
                 let t_name = $(this)[0].classList[1];
-                let t_values = themes_color[$(this)[0].classList[1]];
-                Object.keys(t_values).forEach(function(key)
-                {
-                    document.documentElement.style.setProperty(`--${key}`, t_values[key]);
-                });
+                set_theme(themes_color[$(this)[0].classList[1]]);
                 theme_settings.toggleClass("show");
             }
         });
+    });
+
+    $(".w-content").hover(function ()
+    {
+        $(this).find(".w-caption").css("bottom", '0');
+    }, function ()
+    {
+        $(this).find(".w-caption").css("bottom", "-60%");
+
     });
 });
 
