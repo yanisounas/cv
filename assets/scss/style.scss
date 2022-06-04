@@ -42,7 +42,7 @@
   transform: translateX(20px);
   opacity: 0;
   transition: 1s cubic-bezier(.48,-0.17,.16,1.52);
-  z-index: 50;
+  z-index: -1;
 
   .theme
   {
@@ -58,6 +58,8 @@
 {
   transform: translateX(0);
   opacity: 1;
+  z-index: 50;
+
 }
 
 .anim-hidden
@@ -105,42 +107,89 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .aside-header
-  {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 3rem 0;
-
-
-    img
+    .aside-header
     {
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3rem 0;
+
+
+      img
+      {
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+      }
+
+      .h-infos
+      {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        max-width: 80%;
+      }
     }
 
-    .h-infos
+    .aside-content
     {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: space-around;
+      text-align: center;
+      align-items: center;
+
+      .aside-section
+      {
+        h3
+        {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
+        p
+        {
+          margin: 1rem 0;
+          font-size: 1.2rem;
+          a
+          {
+            color: inherit;
+            margin-left: 5px;
+          }
+        }
+
+        .hobbies
+        {
+          .hobbies-icons
+          {
+            margin: 1rem 0;
+
+            i
+            {
+              cursor: pointer;
+              margin: 0 1rem;
+              transition: 1s all;
+            }
+
+            .active
+            {
+              transform: scale(1.4);
+              position: relative;
+            }
+          }
+          #hobbies-text
+          {
+            width: 100%;
+            height: 1px;
+          }
+        }
+      }
     }
   }
 
-  .aside-content
-  {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
-  }
 }
 /* FIN PARTIE PRESENTATION (ASIDE) */
 
@@ -181,7 +230,9 @@
       .p-body
       {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        gap: 50px;
+
         .p-content
         {
           text-align: center;
@@ -191,12 +242,17 @@
             font-size: 2rem;
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
           }
 
           ul
           {
             font-size: 1.5rem;
+
+            li
+            {
+              margin: 1rem 0;
+            }
           }
         }
       }
@@ -340,9 +396,13 @@
         .w-desc
         {
           margin-top: 1rem;
-          font-size: 1.3rem;
+          font-size: 1rem;
           display: flex;
           justify-content:space-between;
+
+          .w-title
+          {
+          }
 
           .w-link
           {

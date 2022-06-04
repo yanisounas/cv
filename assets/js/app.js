@@ -220,5 +220,25 @@ $(document).ready(function()
 
     });
 
+
+    const hobbies = {
+        movies: "Cinéma",
+        read: "Lire",
+        travel: "Voyager",
+        games: "Jeux Vidéos"
+    }
+
+    $(".h-icon").hover(function()
+    {
+        $(this).parent().parent().find("#hobbies-text").text(hobbies[$(this).attr('id')]);
+        $(this).toggleClass("active");
+
+    }, function()
+    {
+        $(this).parent().parent().find("#hobbies-text").text("");
+        $(this).toggleClass("active");
+
+    });
+
 });
 
