@@ -5,6 +5,7 @@
   font-size: 16px;
   font-family: "Titillium Web", sans-serif;
   color: var(--text-color);
+
 }
 
 .theme-button
@@ -310,50 +311,61 @@
         height: 90%;
         margin: 2rem 3rem;
         position: relative;
-        overflow: hidden;
         transition: 1s;
 
-
-        &:hover
+        .w-img
         {
-          transform: scale(1.1);
-        }
-
-        img
-        {
-          width: 100%;
-          border-radius: 40px;
-          height: 70%;
-        }
-
-        .w-caption
-        {
-          background-color: var(--theme-color);
-          color: var(--text-theme-color);
-          height: 80%;
-          width: 125%;
-          position: absolute;
-          bottom: -60%;
-          transition: bottom 1s cubic-bezier(1,.07,.76,.61);
-
-
-          .w-desc
+          overflow: hidden;
+          img
           {
-            height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            max-width: 80%;
-            text-align: center;
+            height: 70%;
+            transition: .3s;
+          }
+        }
 
-            .w-title
+        .w-desc
+        {
+          margin-top: 1rem;
+          font-size: 1.3rem;
+          display: flex;
+          justify-content:space-between;
+
+          .w-link
+          {
+            color: var(--theme-color);
+            position: relative;
+            transition: 1s;
+
+            &::after
             {
-              font-size: 2rem;
+              content:'';
+              position: absolute;
+              width: 10%;
+              border-bottom: 2px solid var(--theme-color);
+              bottom: -10%;
+              left:0;
+              transition: 1s cubic-bezier(1,0,.15,.98);
+            }
+          }
+
+          .link-hover
+          {
+            transition: 1s cubic-bezier(1,0,.15,.98);
+
+            &:hover
+            {
+              &::after
+              {
+
+                right: 0;
+                left: inherit;
+                width: 100%;
+              }
             }
           }
         }
+
       }
     }
   }
