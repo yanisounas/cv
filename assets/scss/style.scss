@@ -598,17 +598,39 @@
 
 @media screen and (max-width: 1655px)
 {
-    :root
-    {
-      font-size: 13px;
-    }
+    :root {font-size: 13px;}
 }
 
 @media screen and (max-width: 1340px)
 {
-  :root
+  :root {font-size: 9px;}
+
+  .content
   {
-    font-size: 9px;
+    .score
+    {
+      &::before
+      {
+        left: -10px !important;
+      }
+
+      &::after
+      {
+        right: -10px !important;
+      }
+      .value
+      {
+        &::before
+        {
+          left: -10px !important;
+        }
+
+        &::after
+        {
+          right: -10px !important;
+        }
+      }
+    }
   }
 }
 
@@ -623,9 +645,73 @@
     .aside-header{display: none !important;}
     .aside-content{display: none !important;}
     .burger-menu{display:flex !important;}
-
     .aside-h-show {display: flex !important;}
     .aside-c-show {display: flex !important;}
+  }
+}
+
+@media screen and (max-width: 720px)
+{
+  :root {font-size: 7px;}
+  #portfolio
+  {
+    .w-body
+    {
+      flex-flow: column nowrap !important;
+
+      .w-content
+      {
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  #skills
+  {
+    .s-body
+    {
+      flex-flow: column nowrap !important;
+      justify-content: center;
+      align-items: center;
+      .s-content
+      {
+        margin-bottom:5rem !important;
+
+        .icons
+        {
+          margin: 1rem 0 !important;
+          .s-icon
+          {
+            margin: 0 .5rem !important;
+          }
+        }
+
+        .score
+        {
+          &::before
+          {
+            left: -7px !important;
+          }
+
+          &::after
+          {
+            right: -7px !important;
+          }
+          .value
+          {
+            &::before
+            {
+              left: -7px !important;
+            }
+
+            &::after
+            {
+              right: -7px !important;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
