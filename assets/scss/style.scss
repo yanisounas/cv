@@ -391,10 +391,23 @@
     }
   }
   /* FIN PARTIE PORTFOLIO */
-
 }
 /* FIN PARTIE CONTENU PRINCIPAL */
 
+
+@media screen and (max-width: 1655px) {
+    :root
+    {
+      font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1340px) {
+  :root
+  {
+    font-size: 9px;
+  }
+}
 
 
 /*
