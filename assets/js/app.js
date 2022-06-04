@@ -240,5 +240,13 @@ $(document).ready(function()
 
     });
 
+
+    $(".burger-menu").click(function() {
+        $(this).toggleClass("b-active");
+        $(".presentation").toggleClass("pres-show");
+        $(".aside-header").toggleClass("aside-h-show");
+        $(".aside-content").toggleClass("aside-c-show");
+    });
+
 });
 
