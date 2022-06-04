@@ -5,8 +5,8 @@ $(document).ready(function()
         default: {
             "text-color": "black",
             "text-theme-color": "white",
-            "theme-color": "#3D0202",
-            "theme-color-opacity": "rgba(61, 2, 2, 0.8)"
+            "theme-color": "#560303",
+            "theme-color-opacity": "rgba(90,2,2,0.8)"
         },
         "dark-blue": {
             "text-color": "black",
@@ -48,7 +48,7 @@ $(document).ready(function()
         frontend: {
             html5: 90,
             css3: 70,
-            javascript: 40
+            javascript: 50
         },
         backend: {
             php: 70,
@@ -64,7 +64,14 @@ $(document).ready(function()
             linux: 70,
             windows: 80,
             macos: 70
+        },
+        other: {
+            python: 70,
+            c: 20,
+            cpp: 30,
+            cs: 50
         }
+
     };
 
     const init_s_value = function(el, value, parent = null) {
@@ -82,21 +89,43 @@ $(document).ready(function()
     };
 
 
-    const reset_s = function(name, el = null, parent = null)
+    const s_average = function(name)
     {
-        let add = 0;
+        let average = 0;
         let count = 0;
         Object.keys(skills[name]).forEach(function(key)
         {
-            add += skills[name][key];
+            average += skills[name][key];
             count++;
         });
-        add /= count;
+        average /= count;
 
-        init_s_value((el) ? el : $(`.${name}`), `${add}%`, parent);
+        return average;
+    }
+
+    const reset_s = function(name, el = null, parent = null)
+    {
+        init_s_value((el) ? el : $(`.${name}`), `${s_average(name)}%`, parent);
 
     }
 
+
+    const counter = function(el, final_value, timeout)
+    {
+        setInterval(() =>
+        {
+            let el_value = Number(el.text());
+
+            if (el_value < final_value)
+                el.text(++el_value);
+        }, timeout);
+    };
+
+    counter($(".frontend-score"), s_average("frontend"), 30);
+    counter($(".backend-score"), s_average("backend"), 30);
+    counter($(".software-score"), s_average("software"), 30);
+    counter($(".os-score"), s_average("os"), 30);
+    counter($(".other-score"), s_average("other"), 30);
 
     const ratio = .1;
     const options = {
@@ -117,6 +146,8 @@ $(document).ready(function()
                     reset_s("backend", null, 1);
                     reset_s("software", null, 1);
                     reset_s("os", null, 1);
+                    reset_s("other", null, 1);
+
                 }
 
 
@@ -180,13 +211,12 @@ $(document).ready(function()
     $(".s-icon").hover(function ()
     {
         let value = `${skills[$(this).parent().attr("class").split(' ')[1]][$(this).attr('id')]}%`;
-        type_writer($(this), ` ${value}`, 1000);
+        type_writer($(this), `${$(this).text()} ${value}`, 1000);
         init_s_value($(this), value , 2);
-        //$(this).parent().parent().find(".value").css("width", "30%");
     }, function()
     {
         reset_s($(this).parent().attr("class").split(' ')[1], $(this), 2);
-        $(this).text("")
+        $(this).text($(this).text().split(' ')[0])
 
     });
 
