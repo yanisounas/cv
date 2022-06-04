@@ -408,7 +408,6 @@
           {
             color: var(--theme-color);
             position: relative;
-            transition: 1s;
 
             &::after, &::before
             {
@@ -424,21 +423,26 @@
             {
               transform: scaleX(0);
               transform-origin: left;
+              transition-delay: 0s;
             }
 
-            &::after {
+            &::after
+            {
               transform-origin: right;
-              transition-delay: 0.25s;
+              transition-delay: .3s;
             }
 
-            &:hover {
-              &::before {
+            &:hover
+            {
+              &::before
+              {
                 transform: scaleX(1);
                 width: 100%;
-                transition-delay: 0.25s;
+                transition-delay: .3s;
               }
 
-              &::after {
+              &::after
+              {
                 width: 100%;
                 transform: scaleX(0);
                 transition-delay: 0s;
