@@ -48,7 +48,7 @@ $(document).ready(function()
         frontend: {
             html5: 90,
             css3: 70,
-            javascript: 50
+            javascript: 40
         },
         backend: {
             php: 70,
